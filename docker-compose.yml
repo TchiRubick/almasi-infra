@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  gateway:
+    image: node:16
+    container_name: gateway
+    hostname: gateway
+    tty: true
+    restart: unless-stopped
+    volumes:
+      - ./gateway:/usr/src/app
+      - ./gateway/node_modules:/usr/src/app/node_modules
+    working_dir: /usr/src/app/
+    environment:
+      - DB_URL
+    ports:
+      - "4000:4000"
+    stdin_open: true

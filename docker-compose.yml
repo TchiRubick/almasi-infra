@@ -12,6 +12,7 @@ services:
     working_dir: /usr/src/app/
     environment:
       - DB_URL
+      - APP_KEY
     ports:
       - "4000:4000"
     stdin_open: true
